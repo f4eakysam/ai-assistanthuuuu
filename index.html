@@ -602,8 +602,7 @@
 
     <script>
         // 🔑 Your API Key
-        const OPENROUTER_API_KEY = "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";
-
+        const OPENROUTER_API_KEY = "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";
         const chatBox = document.getElementById("chat-box");
         const inputField = document.getElementById("user-input");
         const sendBtnEl = document.getElementById("send-btn");
@@ -723,7 +722,9 @@
                     method: "POST",
                     headers: {
                         "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "HTTP-Referer": window.location.href,
+                        "X-Title": "NexusAI Assistant"
                     },
                     body: JSON.stringify({
                         model: "openrouter/free",
